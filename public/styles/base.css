@@ -2,4 +2,32 @@ body {
     background-color: rgb(108, 108, 108);
     color: rgb(213, 213, 213);
     text-shadow: rgb(31, 31, 31);
+    max-width:760px;
+    min-width: 480px;
+    margin: auto;
+}
+header {
+    display: flex;
+    background-color: rgb(5, 5, 5);
+    color:rgb(255, 251, 251);
+    width: 100%;
+}
+h1 {
+    margin-left: 20px;
+}
+header svg {
+    margin-left: auto;
+    align-self: center;
+    margin-right: 20px;
+}
+#one {
+    background-color: rgb(75, 75, 75);
+    height: 50px;
+    display:flex;
+}
+h2 {
+    font-size: 15pt;
+    text-align: center;
+    margin:auto;
+    align-self: center;    
 }
