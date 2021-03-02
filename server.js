@@ -1,17 +1,51 @@
+
+// ================== packages==========================
+
 const express = require('express');
 const superagent = require('superagent');
 const cors = require('cors');
 require('dotenv').config();
+const pg = require('pg');
+
+
+// ================== app ==============================
+
+
 
 const app = express();
 app.use(cors());
+const PORT = process.env.PORT || 3000;
+
+
+// ----------SQL-------------
+
+const DATABASE_URL = process.env.DATABASE_URL;
+const client = new pg.Client(DATABASE_URL);
+client.on('error', error => console.log(error));
+
+// --------DB TABLE set up ------
+// const tempSqlString = '';
+// const tempSqlArray = [];
+// client.query(tempSqlString,tempSqlArray);
+
+
+// ----------EJS---------------
 
 app.use(express.static('./public'));
 // urlencoded for forms to request body
-app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-const PORT = process.env.PORT || 3000;
+// ----------POST--------------
+
+app.use(express.urlencoded({ extended: true }));
+
+
+
+
+
+// ================== Routes. ==========================
+
+
 
 let searchArr = [];
 let bookArr = [];
@@ -41,10 +75,10 @@ function getShow(req, res) {
             }
             bookArr = bookData;
             console.log(bookArr);
-            res.render('pages/show', { bookArr })
+            res.render('pages/searches/show', { bookArr })
         })
-        .catch(() => {
-            res.status(500).send('Something went wrong')
+        .catch((errorMessage) => {
+            res.status(500).send('Something went wrong', errorMessage)
         });
 }
 // console.log(bookArr);
@@ -56,6 +90,14 @@ function Book(data) {
     this.author = data.volumeInfo.authors ? data.volumeInfo.authors[0] : 'unknown author';
     this.description = data.volumeInfo.description
 }
+
+
+
+
+// ================== Initialization====================
+
+
+
 
 
 app.listen(PORT, () => console.log('app is up on http://localhost:' + PORT));
