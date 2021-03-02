@@ -42,6 +42,9 @@ function getShow(req, res) {
             bookArr = bookData;
             console.log(bookArr);
             res.render('pages/show', { bookArr })
+        })
+        .catch(() => {
+            res.status(500).send('Something went wrong')
         });
 }
 // console.log(bookArr);

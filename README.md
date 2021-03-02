@@ -20,6 +20,9 @@ Use this area to document the iterative changes made to your application as each
 03-01-2021 5:20pm - Application created.
 03-01-2021 6:30pm - Application has a working index.ejs file that renders on the page when '/hello' is called.
 03-01-2021 6:58pm - Application has a working new.ejs file that renders on the page when the page is loaded and has search field with radio buttons to select author or title. 
+03-01-2021 9:58pm - Application has a working index.ejs file that represents the home page.
+03-01-2021 10:58pm - Application has a stylesheets that style the website slightly with css 
+
 
 
 ## Credits and Collaborations
@@ -60,3 +63,27 @@ Start time: 6:38 pm CST
 Finish time: 10:54 pm CST
 
 Actual time needed to complete: 4 hrs 16 mins
+
+## Feature Tasks 4
+
+Number and name of feature: error
+
+Estimate of time needed to complete: 45 mins
+
+Start time: 10:54 pm CST
+
+Finish time: 11:07 pm CST
+
+Actual time needed to complete: 13 mins
+
+## Feature Tasks 5
+
+Number and name of feature: error
+
+Estimate of time needed to complete: 45 mins
+
+Start time: 11:07 pm CST
+
+Finish time: 11:37 pm CST
+
+Actual time needed to complete: 30 mins
