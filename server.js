@@ -8,17 +8,24 @@ app.use(cors());
 
 app.use(express.static('./public'));
 // urlencoded for forms to request body
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 const PORT = process.env.PORT || 3000;
 
 
 app.get('/hello', getHello);
-function getHello(req, res){
+function getHello(req, res) {
     res.render('pages/index')
 }
+app.get('/', (req, res) => {
+    res.render('pages/searches/new');
+});
 
+app.post('/new_search', (req, res) => {
+    console.log(req.body);
+    res.redirect('/');
+});
 
 app.listen(PORT, () => console.log('app is up on http://localhost:' + PORT));
 

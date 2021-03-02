@@ -18,9 +18,9 @@ Provide a high level overview of what this application is and why you are buildi
 Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 03-01-2021 5:20pm - Application created.
+03-01-2021 6:30pm - Application has a working index.ejs file that renders on the page when '/hello' is called.
 
 ## Credits and Collaborations
-
 
 
 ## Feature Tasks 1
@@ -31,6 +31,18 @@ Estimate of time needed to complete: 45 mins
 
 Start time: 5:20 pm CST
 
-Finish time: _____
+Finish time: 6:32 pm CST
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hr 10 mins
+
+## Feature Tasks 2
+
+Number and name of feature: book search
+
+Estimate of time needed to complete: 45 mins
+
+Start time: 6:38 pm CST
+
+Finish time: 
+
+Actual time needed to complete: 
