@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="styles/base.css">
 </head>
 <body>
-    <h1>New Book search</h1>
+    <h1>Show page
+    </h1>
+    <% bookArr.forEach(value => { %>
 
-    <a href="/new">Enter</a>
-    
+        <p><%= value.title %></p>
+        <p><%= value.author %></p>
+        <p><%= value.description %></p>
+        <img src=<%= value.image_url %> >
+    <% }) %>
 </body>
 </html>
