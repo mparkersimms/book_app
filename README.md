@@ -21,6 +21,7 @@ Use this area to document the iterative changes made to your application as each
 03-01-2021 6:30pm - Application has a working index.ejs file that renders on the page when '/hello' is called.
 03-01-2021 6:58pm - Application has a working new.ejs file that renders on the page when the page is loaded and has search field with radio buttons to select author or title. 
 
+
 ## Credits and Collaborations
 
 
@@ -56,6 +57,6 @@ Estimate of time needed to complete: 45 mins
 
 Start time: 6:38 pm CST
 
-Finish time: 6:56 pm CST
+Finish time: 10:54 pm CST
 
-Actual time needed to complete: 18 mins
+Actual time needed to complete: 4 hrs 16 mins
