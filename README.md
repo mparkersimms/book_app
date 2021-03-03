@@ -23,8 +23,8 @@ Use this area to document the iterative changes made to your application as each
 03-01-2021 9:58pm - Application has a working index.ejs file that represents the home page.
 03-01-2021 10:58pm - Application has a stylesheets that style the website slightly with css 
 03-02-2021 5:13pm - Application has a local database that will store book information in it and display it on the index(home) page of the app
-
-
+03-02-2021 7:30pm - Application has a the ability to look at a single book on a different page in a more detailed view
+03-02-2021 7:30pm - Application has a the ability to store book data in the database that the user chooses on a single book case. The books selected are then added to the collection and displayed on the home page. 
 
 
 ## Credits and Collaborations
@@ -101,3 +101,27 @@ Start time: 4:00 pm CST
 Finish time: 5:11 pm CST
 
 Actual time needed to complete: 1 hr 11 mins
+
+## Feature Tasks 7
+
+Number and name of feature: single book 
+
+Estimate of time needed to complete: 1.5 hrs
+
+Start time: 5:20 pm CST
+
+Finish time: 7:30 pm CST
+
+Actual time needed to complete: 2 hr 10 mins
+
+## Feature Tasks 8
+
+Number and name of feature: adding book to collection
+
+Estimate of time needed to complete: 1.5 hrs
+
+Start time: 7:40 pm CST
+
+Finish time: 9:30 pm CST
+
+Actual time needed to complete: 1 hr 50 mins

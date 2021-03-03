@@ -13,8 +13,18 @@
 
         <p><%= value.title %></p>
         <p><%= value.author %></p>
-        <p><%= value.description %></p>
         <img src=<%= value.image_url %> >
+        <p><%= value.description %></p>
+        <p><%= value.isbn %></p>
+
+        <form action="/add" method="POST" name= "author">
+            <input hidden name="title" value="<%= value.title %>"></input>
+            <input hidden name="author" value="<%= value.author %>"></input>
+            <input hidden name="isbn" value="<%= value.isbn %>"></input>
+            <input hidden name="image_url" value="<%= value.image_url %>"></input>
+            <input hidden name="description" value="<%= value.description %>"></input>
+            <button type="submit" value="Add to Collection">Add to Collection</button>
+          </form>
     <% }) %>
 </body>
 </html>

@@ -24,9 +24,9 @@ const client = new pg.Client(DATABASE_URL);
 client.on('error', error => console.log(error));
 
 // --------DB TABLE set up ------
-// const tempSqlString = '';
-// const tempSqlArray = [];
-// client.query(tempSqlString,tempSqlArray);
+// const SqlString = '';
+// const SqlArray = [];
+// client.query(SqlString,SqlArray);
 
 
 // ----------EJS---------------
@@ -96,13 +96,13 @@ app.get('/show', getShow);
 function getShow(req, res) {
     superagent.get(`https://www.googleapis.com/books/v1/volumes?q=in${searchArr[0].searchBy}:${searchArr[0].name}&limit=10`)
         .then(data => {
-            // console.log(data.body.items[0])
+            console.log("what is this====>", data.body.items[1].volumeInfo.industryIdentifiers[0].identifier)
             const bookData = data.body.items.map(bookOutput);
             function bookOutput(info) {
                 return new Book(info)
             }
             bookArr = bookData;
-            console.log(bookArr);
+            // console.log(bookArr);
             res.render('pages/searches/show', { bookArr })
         })
         .catch((errorMessage) => {
@@ -116,9 +116,22 @@ function Book(data) {
     this.image_url = data.volumeInfo.imageLinks ? data.volumeInfo.imageLinks.thumbnail : `https://i.imgur.com/J5LVHEL.jpg`;
     this.title = data.volumeInfo.title;
     this.author = data.volumeInfo.authors ? data.volumeInfo.authors[0] : 'unknown author';
-    this.description = data.volumeInfo.description
+    this.description = data.volumeInfo.description;
+    this.isbn = data.volumeInfo.industryIdentifiers[0].identifier
 }
 
+app.post('/add', addToCollection);
+function addToCollection(req, res) {
+    console.log('you clicked on the add to collection button', req.body);
+    const SqlString = 'INSERT INTO books (author , title, isbn, image_url, description) VALUES ($1,$2,$3,$4,$5) RETURNING id;';
+    const SqlArray = [req.body.author, req.body.title, req.body.isbn, req.body.image_url, req.body.description];
+    client.query(SqlString, SqlArray)
+        .then((result) => {
+            console.log(result.rows)
+            res.redirect(`/books/${result.rows[0].id}`)
+        });
+
+}
 
 
 
