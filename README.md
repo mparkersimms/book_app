@@ -125,3 +125,15 @@ Start time: 7:40 pm CST
 Finish time: 9:30 pm CST
 
 Actual time needed to complete: 1 hr 50 mins
+
+## Feature Tasks 9
+
+Number and name of feature: partial for head, header, and footer
+
+Estimate of time needed to complete: 1.5 hrs
+
+Start time: 9:35 pm CST
+
+Finish time: 10:02 pm CST
+
+Actual time needed to complete: 27 mins

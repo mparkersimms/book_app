@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book App</title>
     <link rel="stylesheet" href="styles/base.css">
-</head>
+</head> -->
+<%- include('./../../layout/head') %>
+<%- include('./../../layout/header') %>
 <body>
-    <h1>Show page
-    </h1>
+    <h2>Show page
+    </h2>
     <% bookArr.forEach(value => { %>
 
         <p><%= value.title %></p>
@@ -26,5 +28,8 @@
             <button type="submit" value="Add to Collection">Add to Collection</button>
           </form>
     <% }) %>
+
+<%- include('./../../layout/footer') %>
+
 </body>
 </html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book App</title>
-    <link rel="stylesheet" href="styles/base.css">
-</head>
+
+<%- include('./../layout/head') %>
+
 <body>
-    <h1>New Book search</h1>
+
+    <%- include('./../layout/header') %>
+
+    <h2>New Book search</h2>
 
     <a href="/searches/new">Enter</a>
 
@@ -21,5 +21,6 @@
     <% }) %>
 
     <p><%= booksFromDB.length %></p>
+    <%- include('./../layout/footer') %>
 </body>
 </html>
