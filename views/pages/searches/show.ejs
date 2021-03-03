@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book App</title>
+    <link rel="stylesheet" href="styles/base.css">
+</head> -->
+<%- include('./../../layout/head') %>
+<%- include('./../../layout/header') %>
+<body>
+    <h2>Show page
+    </h2>
+    <% bookArr.forEach(value => { %>
+
+        <p><%= value.title %></p>
+        <p><%= value.author %></p>
+        <img src=<%= value.image_url %> >
+        <p><%= value.description %></p>
+        <p><%= value.isbn %></p>
+
+        <form action="/add" method="POST" name= "author">
+            <input hidden name="title" value="<%= value.title %>"></input>
+            <input hidden name="author" value="<%= value.author %>"></input>
+            <input hidden name="isbn" value="<%= value.isbn %>"></input>
+            <input hidden name="image_url" value="<%= value.image_url %>"></input>
+            <input hidden name="description" value="<%= value.description %>"></input>
+            <button type="submit" value="Add to Collection">Add to Collection</button>
+          </form>
+    <% }) %>
+
+<%- include('./../../layout/footer') %>
+
+</body>
+</html>
