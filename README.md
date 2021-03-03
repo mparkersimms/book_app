@@ -22,6 +22,8 @@ Use this area to document the iterative changes made to your application as each
 03-01-2021 6:58pm - Application has a working new.ejs file that renders on the page when the page is loaded and has search field with radio buttons to select author or title. 
 03-01-2021 9:58pm - Application has a working index.ejs file that represents the home page.
 03-01-2021 10:58pm - Application has a stylesheets that style the website slightly with css 
+03-02-2021 5:13pm - Application has a local database that will store book information in it and display it on the index(home) page of the app
+
 
 
 
@@ -87,3 +89,15 @@ Start time: 11:07 pm CST
 Finish time: 11:37 pm CST
 
 Actual time needed to complete: 30 mins
+
+## Feature Tasks 6
+
+Number and name of feature: local DataBase
+
+Estimate of time needed to complete: 1.5 hrs
+
+Start time: 4:00 pm CST
+
+Finish time: 5:11 pm CST
+
+Actual time needed to complete: 1 hr 11 mins

@@ -10,6 +10,16 @@
     <h1>New Book search</h1>
 
     <a href="/searches/new">Enter</a>
-    
+
+    <% booksFromDB.forEach(value => { %>
+        <p><%= value.id%></p>
+
+        <%- include('./books/detail', value) %>
+        <a href="/books/<%= value.id%>">Detail View</a>
+
+     
+    <% }) %>
+
+    <p><%= booksFromDB.length %></p>
 </body>
 </html>

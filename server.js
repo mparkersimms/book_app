@@ -51,11 +51,36 @@ let searchArr = [];
 let bookArr = [];
 
 app.get('/', (req, res) => {
-    res.render('pages/index');
+    const SqlString = 'SELECT * FROM books;';
+    client.query(SqlString)
+        .then(results => {
+            console.log(results.rows);
+            const booksFromDB = results.rows;
+            res.render('pages/index', { booksFromDB });
+        });
+
 });
+
+app.get('/books/:id', getSingleBook);
+function getSingleBook(req, res) {
+    console.log('params', req.params)
+    const SqlString = 'SELECT * FROM books WHERE id=$1';
+    const SqlArray = [req.params.id];
+    client.query(SqlString, SqlArray)
+        .then(result => {
+            const ejsObject = result.rows[0];
+            console.log(result.rows[0]);
+            res.render('pages/books/show', { ejsObject });
+        })
+
+}
+
 app.get('/searches/new', (req, res) => {
     res.render('pages/searches/new');
 });
+
+
+
 
 app.post('/searches', (req, res) => {
     searchArr = [];
@@ -63,6 +88,9 @@ app.post('/searches', (req, res) => {
     searchArr.push(req.body);
     res.redirect('/show');
 });
+
+
+
 
 app.get('/show', getShow);
 function getShow(req, res) {
@@ -99,8 +127,9 @@ function Book(data) {
 
 
 
-
-app.listen(PORT, () => console.log('app is up on http://localhost:' + PORT));
+client.connect().then(() => {
+    app.listen(PORT, () => console.log('app is up on http://localhost:' + PORT));
+});
 
 
 // default for no image available
