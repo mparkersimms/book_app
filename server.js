@@ -77,6 +77,9 @@ function getCollection(req, res){
             console.log(results.rows);
             const booksFromDB = results.rows;
             res.render('pages/index', { booksFromDB });
+        })
+        .catch((errorMessage) => {
+            res.status(500).send('Something went wrong', errorMessage)
         });
 
 }
@@ -92,6 +95,9 @@ function getSingleBook(req, res) {
             console.log(result.rows[0]);
             res.render('pages/books/show', { ejsObject });
         })
+        .catch((errorMessage) => {
+            res.status(500).send('Something went wrong', errorMessage)
+        });
 
 }
 
@@ -143,6 +149,9 @@ function addToCollection(req, res) {
         .then((result) => {
             console.log(result.rows)
             res.redirect(`/books/${result.rows[0].id}`)
+        })
+        .catch((errorMessage) => {
+            res.status(500).send('Something went wrong', errorMessage)
         });
 }
 
