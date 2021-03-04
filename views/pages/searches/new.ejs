@@ -11,12 +11,11 @@
 <body>
    
     <div id="one"><h2>Search by Title or Author</h2></div>
-    <form action="/searches" method="POST">
-        <input type="text" name="name" value="Enter a title or author">
-    
-        author<input type="radio" value="author" name="searchBy">
-        title<input type="radio" value="title" name="searchBy">
-        <input type="submit">
+    <form id="one" action="/searches" method="POST">
+        <input class="two" type="text" name="name" value="Enter a title or author">
+    <div class="two">author<input type="radio" value="author" name="searchBy"></div>
+    <div class="two">title<input type="radio" value="title" name="searchBy"></div>
+        <input class="two" type="submit">
       </form>
 
 <%- include('./../../layout/footer') %>

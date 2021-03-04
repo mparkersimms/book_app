@@ -8,6 +8,7 @@ const superagent = require('superagent');
 const cors = require('cors');
 require('dotenv').config();
 const pg = require('pg');
+const methodOverride = require('method-override');
 
 
 // ================== app ==============================
@@ -44,6 +45,7 @@ app.set('view engine', 'ejs');
 // ----------POST--------------
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 
 
@@ -64,17 +66,19 @@ app.get('/searches/new', getNew);
 app.post('/searches', postSearches);
 app.get('/show', getShow);
 app.post('/add', addToCollection);
-
+app.put('/update/:id', updateBook);
+app.put('/books/:id', updateBookData)
+app.delete('/books/:id', deleteBook)
 
 
 
 // -------functions--------------
 
-function getCollection(req, res){
+function getCollection(req, res) {
     const SqlString = 'SELECT * FROM books;';
     client.query(SqlString)
         .then(results => {
-            console.log(results.rows);
+            // console.log(results.rows);
             const booksFromDB = results.rows;
             res.render('pages/index', { booksFromDB });
         })
@@ -155,7 +159,36 @@ function addToCollection(req, res) {
         });
 }
 
+function updateBook(req, res) {
+    console.log('about to update a book', req.body);
+    const ejsObject = req.body;
+    res.render('pages/books/edit', ejsObject);
+}
 
+function updateBookData(req, res) {
+    console.log(req.body);
+    const SqlString = 'UPDATE books SET author=$1 , title=$2, isbn=$3, image_url=$4, description=$5 WHERE id=$6';
+    const SqlArray = [req.body.author, req.body.title, req.body.isbn, req.body.image_url, req.body.description, req.params.id];
+    client.query(SqlString, SqlArray)
+        .then((result) => {
+            console.log(result.rows)
+            res.redirect(`/books/${req.params.id}`)
+
+        })
+        .catch((errorMessage) => {
+            res.status(500).send('Something went wrong', errorMessage)
+        });
+}
+
+function deleteBook(req, res) {
+    console.log(req.params);
+    const SqlString = 'DELETE FROM books WHERE id=$1';
+    const SqlArray = [req.params.id];
+    client.query(SqlString, SqlArray)
+        .then(() =>{
+            res.redirect('/')
+        })
+}
 
 // ================== Initialization====================
 
@@ -168,7 +201,7 @@ client.connect().then(() => {
 
 // ------ default image/icon------------
 /*
---------image--------- 
+--------image---------
 https://i.imgur.com/J5LVHEL.jpg
 
 ---------icon---------
