@@ -57,3 +57,41 @@ section form button {
     width: 300px;
     height: 50px;
 }
+
+
+#one {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+#one input {
+    margin:auto;
+    /* width:80%; */
+    background-color: rgb(233, 233, 233);
+    padding: 10px;
+}
+#one div {
+    margin:auto;
+    width:80%;
+    background-color: rgb(203, 199, 199);
+    margin:10px auto;
+    height:30px;
+    padding: 10px;  
+    color:black;  
+}
+
+.two {
+    width: 80%;
+}
+/* books/show.ejs */
+#three {
+    background-color: rgb(96, 94, 94);
+}
+#three section{
+    background-color:none;
+}
+#three button {
+    background-color: rgb(52, 52, 52);
+    color:white;
+}

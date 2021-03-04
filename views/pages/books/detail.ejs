@@ -4,5 +4,17 @@
     <h3><%= author%></h3>
     <P><%= isbn%></P>
     <P><%= description%></P>
-
+    <form action="/update/<%= id %>?_method=PUT" method="POST" name= "author">
+        <fieldset><button type="submit" value="Add to Collection">Update Details</button>
+        <input hidden name="id" value= "<%= id %>""></input>
+        <input hidden name="title"type= "text" value="<%= title %>"></input>
+        <input hidden name="author" value="<%= author %>"></input>
+        <input hidden name="isbn" value="<%= isbn %>"></input>
+        <input hidden name="image_url" value="<%= image_url %>"></input>
+        <input hidden name="description" value="<%= description %>"></input>
+        <button type="submit" value="Add to Collection">Add to Collection</button>
+      </fieldset></form>
+      <form action="/books/<%= id %>?_method=DELETE" method="POST" name= "author">
+        <button type="submit" value="Add to Collection">Delete Book</button>
+      </form>
 </section>
