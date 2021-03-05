@@ -52,7 +52,7 @@ h3, p, form{
     padding: 10px;    
 }
 section form button {
-    background-color: black;
+    background-color: rgb(52, 52, 52);
     color: whitesmoke;
     width: 300px;
     height: 50px;
@@ -84,9 +84,17 @@ section form button {
 .two {
     width: 80%;
 }
+#two {
+    background-color: rgb(52, 52, 52);
+    width: 70%;
+    height:40px;
+    align-self: center;
+    color: rgb(216, 213, 213);
+}
 /* books/show.ejs */
 #three {
     background-color: rgb(96, 94, 94);
+    margin-bottom: 20px;
 }
 #three section{
     background-color:none;
@@ -94,4 +102,38 @@ section form button {
 #three button {
     background-color: rgb(52, 52, 52);
     color:white;
+}
+fieldset {
+    
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+fieldset form {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+fieldset form button{
+    width:100%;
+    
+}
+#four {
+    margin: 30px auto 10px auto;
+    
+}
+#five {
+    display:flex;
+    flex-direction: column;
+    width:75%;
+}
+#five input{
+    height:30px;
+    margin: 8px;
+
+}
+#six {
+    background-color: rgb(96, 94, 94);
+    margin-bottom: 20px;
+}
+#six section fieldset {
+    display: none;
 }

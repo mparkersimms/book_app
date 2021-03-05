@@ -11,8 +11,8 @@
 <body>
     <h2>Search Results</h2>
     <% bookArr.forEach(value => { %>
-        <section>
-
+        <section id="three">
+            <section>
         <img src=<%= value.image_url %> >
         <h2><%= value.title %></h2>
         <h3><%= value.author %></h3>
@@ -28,6 +28,7 @@
             <button type="submit" value="Add to Collection">Add to Collection</button>
           </form>
         </section>
+    </section>
     <% }) %>
 
 <%- include('./../../layout/footer') %>

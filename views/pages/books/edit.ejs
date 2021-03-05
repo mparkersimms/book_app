@@ -6,7 +6,7 @@
     
     <section>
         
-        <form action="/books/<%= id %>?_method=PUT" method="POST" name= "author">
+        <form id="five" action="/books/<%= id %>?_method=PUT" method="POST" name= "author">
             <input  name="title" value="<%= title %>"></input>
             <input  name="author" value="<%= author %>"></input>
             <input  name="isbn" value="<%= isbn %>"></input>
@@ -16,7 +16,7 @@
                 <option>Default Bookshelf</option>
                 <option>Default Bookshelf</option>
             </select>
-            <button type="submit" value="Add to Collection">Update Book</button>
+            <button id="four" type="submit" value="Add to Collection">Update Book</button>
         </form>
         
     </section>

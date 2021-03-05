@@ -7,20 +7,21 @@
 
     <%- include('./../layout/header') %>
 
-    <h2>New Book search</h2>
-
-    <a href="/searches/new">Enter</a>
-
+    <!-- <h2>New Book search</h2> -->
+    <a href="/searches/new"><h2>New Book search</h2></a>
     <% booksFromDB.forEach(value => { %>
-        <p><%= value.id%></p>
+<section id="six">
+
+        <!-- <p><%= value.id%></p> -->
 
         <%- include('./books/detail', value) %>
-        <a href="/books/<%= value.id%>">Detail View</a>
-
+        
+        <form action="/books/<%= value.id%>" method="GET" name= "book">
+            <button type="submit" >Detail View</button>
+          </form>
      
+        </section>
     <% }) %>
-
-    <p><%= booksFromDB.length %></p>
     <%- include('./../layout/footer') %>
 </body>
 </html>
